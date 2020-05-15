@@ -4,7 +4,7 @@
 #
 Name     : R-rmatio
 Version  : 0.14.0
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/rmatio_0.14.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmatio_0.14.0.tar.gz
 Summary  : Read and Write 'Matlab' Files
@@ -13,8 +13,6 @@ License  : BSD-2-Clause GPL-3.0
 Requires: R-rmatio-lib = %{version}-%{release}
 BuildRequires : buildreq-R
 BuildRequires : pkgconfig(zlib)
-BuildRequires : util-linux
-BuildRequires : zlib-dev
 
 %description
 package supports reading MAT version 4, MAT version 5 and MAT
@@ -31,21 +29,22 @@ lib components for the R-rmatio package.
 
 %prep
 %setup -q -c -n rmatio
+cd %{_builddir}/rmatio
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571892418
+export SOURCE_DATE_EPOCH=1589538883
 
 %install
-export SOURCE_DATE_EPOCH=1571892418
+export SOURCE_DATE_EPOCH=1589538883
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
