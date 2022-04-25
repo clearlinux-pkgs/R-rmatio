@@ -4,7 +4,7 @@
 #
 Name     : R-rmatio
 Version  : 0.16.0
-Release  : 24
+Release  : 25
 URL      : https://cran.r-project.org/src/contrib/rmatio_0.16.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmatio_0.16.0.tar.gz
 Summary  : Read and Write 'Matlab' Files
