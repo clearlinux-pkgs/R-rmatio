@@ -4,7 +4,7 @@
 #
 Name     : R-rmatio
 Version  : 0.18.0
-Release  : 30
+Release  : 31
 URL      : https://cran.r-project.org/src/contrib/rmatio_0.18.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/rmatio_0.18.0.tar.gz
 Summary  : Read and Write 'Matlab' Files
@@ -14,9 +14,6 @@ Requires: R-rmatio-lib = %{version}-%{release}
 Requires: R-rmatio-license = %{version}-%{release}
 BuildRequires : buildreq-R
 BuildRequires : pkgconfig(zlib)
-# Suppress stripping binaries
-%define __strip /bin/true
-%define debug_package %{nil}
 
 %description
 package supports reading MAT version 4, MAT version 5 and MAT
@@ -49,10 +46,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1675702696
+export SOURCE_DATE_EPOCH=1678836258
 
 %install
-export SOURCE_DATE_EPOCH=1675702696
+export SOURCE_DATE_EPOCH=1678836258
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/R-rmatio
 cp %{_builddir}/rmatio/inst/NOTICE %{buildroot}/usr/share/package-licenses/R-rmatio/40447ec0fa2d5b20219acbea66ce729f5324fad0 || :
